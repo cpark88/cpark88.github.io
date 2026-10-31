@@ -3,13 +3,13 @@
   when they do not apply. Keep the class names exactly as they are.
 -->
 
-<!-- 1. Accepted paper: inside <section id="publications">, above <h3 class="subhead">, newest first. -->
+<!-- 1. Any paper: inside <section id="publications">, newest first. -->
       <article class="pub" id="{{id}}">
         <a class="teaser" href="{{title-url}}" data-label="{{Short name}}" tabindex="-1" aria-hidden="true"><img src="images/teasers/{{id}}.png" alt=""></a>
         <div>
           <h3 class="pub-title"><a href="{{title-url}}">{{Exact published title}}</a></h3>
           <p class="authors">{{Author}}, <strong>Chung Park</strong>†, {{Author}}, <a href="https://sites.google.com/site/jaegulchoo/">Jaegul Choo</a></p>
-          <p class="venue"><em>{{VENUE}}</em> {{YYYY}}<span class="award">{{Oral presentation}}</span></p>
+          <p class="venue"><span class="pub-type">{{Conference|Journal|Workshop|Preprint}}</span><em>{{VENUE}}</em> {{YYYY}}<span class="award">{{Oral presentation}}</span></p>
           <p class="impact"><span class="live-dot" aria-hidden="true"></span>{{Online A/B test: +X% CTR over <baseline as stated in the paper>}}</p>
           <p class="summary">{{One sentence, at most 30 words: the problem, then the idea.}}</p>
           <p class="pub-links"><a href="{{paper-url}}">Paper</a><a href="https://arxiv.org/abs/{{arxiv-id}}">arXiv</a><a href="https://github.com/cpark88/{{repo}}">Code</a></p>
@@ -19,21 +19,13 @@
   optional: † (only if Chung Park is the corresponding author), <span class="award"> (only if announced),
             <p class="impact"> (only if the paper or public repo reports a production result).
   venue with a track: <em>CIKM</em> 2026, Full Research Track
+  journal venue: <span class="pub-type">Journal</span><em>{{Journal name}}</em> {{YYYY}}, linked by DOI (https://doi.org/...) as "Paper"
+  preprint venue: <span class="pub-type">Preprint</span><em>arXiv</em> {{YYYY}}
+  workshop venue: <span class="pub-type">Workshop</span><em>{{Workshop name}}</em>, {{YYYY}}
   links, in this order and only those that exist: Paper, arXiv, Code, Project, Press.
   title-url: the paper page; the Code repo if there is no paper page yet.
 -->
 
-<!-- 2. Journal article, preprint or workshop paper: inside the matching <ul class="compact">, newest first.
-     Journal venue line: <em>{{Journal name}}</em> {{YYYY}}, and the link is the DOI (https://doi.org/...) as "Paper". -->
-
-        <li id="{{id}}">
-          <p class="pub-title"><a href="https://arxiv.org/abs/{{arxiv-id}}">{{Exact title}}</a></p>
-          <p class="authors">{{Authors, with <strong>Chung Park</strong>}}</p>
-          <p class="venue"><em>arXiv</em> {{YYYY}}</p>
-          <p class="pub-links"><a href="https://arxiv.org/abs/{{arxiv-id}}">arXiv</a></p>
-        </li>
-<!-- For a workshop paper the venue line is: <em>{{Workshop name}}</em>, {{YYYY}} -->
-
-<!-- 3. News item: first item of <ol class="news">. -->
+<!-- 2. News item: first item of <ol class="news">. -->
         <li><time datetime="{{YYYY-MM}}">{{Mon YYYY}}</time><p><a href="#{{id}}">{{Short name}}</a> was accepted to {{VENUE YYYY}}.</p></li>
 <!-- Other news wording: "... received the Best Paper Award at VENUE YYYY." / "... will be presented as an oral at VENUE YYYY." -->

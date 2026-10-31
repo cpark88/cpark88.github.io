@@ -8,7 +8,7 @@ Chung Park(박정)의 개인 홈페이지. GitHub Pages가 `main` 브랜치 루�
 
 | 경로 | 내용 |
 |---|---|
-| `index.html` | 페이지 전체. 섹션 순서: Intro → News → Publications(학회 논문 → Journal articles → Preprints and workshop papers) → Experience → Education → Academic service |
+| `index.html` | 페이지 전체. 섹션 순서: Intro → News → Selected publications(한 목록, 유형 태그로 구분) → Experience → Education → Talks → Academic service |
 | `images/profile.jpg` | 프로필 사진(4:5). 없으면 이니셜 타일이 보인다 |
 | `images/teasers/<id>.png` | 논문 티저. `<id>`는 `<article class="pub" id>`와 같다. 없으면 약어 타일이 보인다 |
 | `assets/cv.pdf` | CV |
@@ -44,7 +44,7 @@ Chung Park(박정)의 개인 홈페이지. GitHub Pages가 `main` 브랜치 루�
 
 - `<ol class="news">` 맨 위에 넣는다(최신순): `<li><time datetime="YYYY-MM">Mon YYYY</time><p>…</p></li>`
 - 논문을 언급하면 해당 항목으로 링크한다: `<a href="#id">`
-- 8개를 넘으면 가장 오래된 것부터 지운다. 논문 자체는 Publications에 남는다.
+- 8개를 넘으면 가장 오래된 것부터 지운다. 논문 자체는 Selected publications에 남는다.
 
 ## 작업 흐름
 

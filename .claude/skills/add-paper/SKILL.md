@@ -8,17 +8,19 @@ argument-hint: "[link | BibTeX | PDF path | note]"
 
 Request: $ARGUMENTS
 
-## 1. Pick the list
+## 1. Pick the type
 
-| Status | Where it goes |
-|---|---|
-| Accepted at a conference | Publications (`<article class="pub">`) |
-| Journal article | Journal articles (`<ul class="compact">` under that heading), venue `<em>Journal name</em> YYYY` |
-| Public on arXiv, not accepted yet | Preprints and workshop papers (`<ul class="compact">`), venue `<em>arXiv</em> YYYY` |
-| Workshop paper | Preprints and workshop papers |
-| Under review with no public version | Not on the page. Tell the user, and offer to add it once it is on arXiv or accepted |
+Every paper goes in the one list under Selected publications, as `<article class="pub">`. The first tag in its venue line gives the type.
 
-A preprint that gets accepted moves from the compact list to Publications. It keeps its `id`, and the compact entry is deleted.
+| Status | Type tag | Venue |
+|---|---|---|
+| Accepted at a conference | `Conference` | `<em>VENUE</em> YYYY` |
+| Journal article | `Journal` | `<em>Journal name</em> YYYY` |
+| Workshop paper | `Workshop` | `<em>Workshop name</em>, YYYY` |
+| Public on arXiv, not accepted yet | `Preprint` | `<em>arXiv</em> YYYY` |
+| Under review with no public version | Not on the page. Tell the user, and offer to add it once it is on arXiv or accepted | |
+
+A preprint that gets accepted keeps its entry and its `id`. Change its type tag and venue, then move it to its new place in the order.
 
 ## 2. Fill the record
 
@@ -34,7 +36,7 @@ Fill every field from the source in the third column. Open sources in this order
 | `id` | lowercase short name of the method (`duelrec`). It is also the teaser filename. An existing entry keeps its `id` | — |
 | title | exact, with the published capitalization | paper |
 | authors | full list in order, spelled as in the paper; `<strong>Chung Park</strong>`, `†` after the corresponding author | paper (user for `†`) |
-| venue | `<em>VENUE</em> YYYY`, plus the track if it is not the main track | user or acceptance notice |
+| venue | type tag, then `<em>VENUE</em> YYYY`, plus the track if it is not the main track | user or acceptance notice |
 | award | Oral, Spotlight, Best Paper… only when announced | user |
 | links | Paper, arXiv, Code, Project, Press, in that order, only those that exist | paper page, repo |
 | impact | only a production or online A/B result that the paper or public repo states, with its number and baseline | full text, repo |

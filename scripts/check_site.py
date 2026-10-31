@@ -28,6 +28,7 @@ MONTHS = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", 
 FULL_MONTHS = ["January", "February", "March", "April", "May", "June", "July",
                "August", "September", "October", "November", "December"]
 MAX_NEWS = 8
+PUB_TYPES = ("Conference", "Journal", "Workshop", "Preprint")
 # Wording that must never reach the public page. Names of unpublished papers and internal
 # projects go in .claude/private-terms.txt instead: this script is public, that file is gitignored.
 BLOCKED_PHRASES = ["under review", "under submission", "in submission", "submitted to",
@@ -167,6 +168,10 @@ def check_entry(node, label, rep):
     if year_of(venue) is None:
         rep.error(node.line, f'{label}: <p class="venue"> needs the venue and a year, e.g. <em>ICLR</em> 2026')
 
+    kind = venue.find(cls="pub-type") if venue is not None else None
+    if kind is None or kind.text().strip() not in PUB_TYPES:
+        rep.error(node.line, f'{label}: the venue line starts with <span class="pub-type">, one of {", ".join(PUB_TYPES)}')
+
     links = node.find(cls="pub-links")
     if links is None or not links.find_all("a"):
         rep.error(node.line, f'{label}: <p class="pub-links"> needs at least one link (Paper, arXiv or Code)')
@@ -208,13 +213,6 @@ def check_publications(root, rep):
                 rep.error(teaser.line, f'{label}: the teaser image must be <img src="{expected}" alt="">')
         check_entry(art, label, rep)
     check_order(pubs, "Publications", rep)
-
-    # Compact lists (journal articles, preprints and workshop papers), each newest first.
-    for number, compact in enumerate(root.find_all("ul", "compact"), start=1):
-        items = [c for c in compact.children if isinstance(c, Node) and c.tag == "li"]
-        for li in items:
-            check_entry(li, label_of(li), rep)
-        check_order(items, f"compact list {number}", rep)
 
 
 def check_news(root, rep):
