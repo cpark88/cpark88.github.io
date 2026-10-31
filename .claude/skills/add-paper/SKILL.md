@@ -15,7 +15,7 @@ Every paper goes in the one list under Selected publications, as `<article class
 | Status | Type tag | Venue |
 |---|---|---|
 | Accepted at a conference | `Conference` | `<em>VENUE</em> YYYY` |
-| Journal article | `Journal` | `<em>Journal name</em> YYYY` |
+| Journal article | `Journal` | `<em>Journal name</em> YYYY, SCIE, IF X.X` (index and IF from the CV or the user) |
 | Workshop paper | `Workshop` | `<em>Workshop name</em>, YYYY` |
 | Public on arXiv, not accepted yet | `Preprint` | `<em>arXiv</em> YYYY` |
 | Under review with no public version | Not on the page. Tell the user, and offer to add it once it is on arXiv or accepted | |
@@ -67,4 +67,3 @@ With no figure, skip this step; the page shows the `data-label` tile.
 2. Report to the user in this shape:
    - **Changed:** list, news, footer (one line each)
    - **Left as TODO:** fields, if any
-   - **Question:** "Update the CV (`assets/cv.pdf`) too?"
