@@ -1,0 +1,574 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Chung Park (박정)</title>
+  <meta name="description" content="Chung Park is a Lead ML Researcher and Team Lead at SK Telecom, working on LLM-based recommender systems, reinforcement learning, and self-improving AI systems.">
+  <meta name="author" content="Chung Park">
+  <meta name="color-scheme" content="light dark">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Chung Park (박정)">
+  <meta property="og:description" content="Lead ML Researcher and Team Lead at SK Telecom. LLM-based recommender systems, reinforcement learning, self-improving AI systems.">
+  <meta property="og:url" content="https://cpark88.github.io/">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="preload" href="fonts/source-serif-4-opsz-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Chung Park",
+    "alternateName": "박정",
+    "jobTitle": "Lead ML Researcher and Team Lead",
+    "worksFor": { "@type": "Organization", "name": "SK Telecom" },
+    "alumniOf": [
+      { "@type": "CollegeOrUniversity", "name": "KAIST" },
+      { "@type": "CollegeOrUniversity", "name": "Yonsei University" }
+    ],
+    "url": "https://cpark88.github.io/",
+    "sameAs": ["https://github.com/cpark88", "https://www.linkedin.com/in/chung-park-a9a846196"]
+  }
+  </script>
+  <script>
+    // Theme: the visitor's saved choice, otherwise the operating system's.
+    (function () {
+      var t = null;
+      try { t = localStorage.getItem('theme'); } catch (e) {}
+      if (t !== 'light' && t !== 'dark') {
+        t = window.matchMedia && matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+      }
+      document.documentElement.setAttribute('data-theme', t);
+    })();
+  </script>
+  <style>
+    @font-face {
+      font-family: "Source Serif 4";
+      src: url("fonts/source-serif-4-opsz-normal.woff2") format("woff2");
+      font-weight: 200 900;
+      font-style: normal;
+      font-display: swap;
+    }
+    @font-face {
+      font-family: "Source Serif 4";
+      src: url("fonts/source-serif-4-opsz-italic.woff2") format("woff2");
+      font-weight: 200 900;
+      font-style: italic;
+      font-display: swap;
+    }
+    @font-face {
+      font-family: "Source Sans 3";
+      src: url("fonts/source-sans-3-wght-normal.woff2") format("woff2");
+      font-weight: 200 900;
+      font-style: normal;
+      font-display: swap;
+    }
+
+    :root {
+      --paper: #ffffff;
+      --ink: #1b2430;
+      --slate: #5b6675;
+      --rule: #e3e7ee;
+      --link: #2747c7;
+      --live: #0e7c5a;
+      --award: #8a6100;
+      --tile: #f1f4f8;
+      --tile-ink: #8a95a5;
+      --todo-bg: #fff1a8;
+      --todo-ink: #5c4300;
+      --serif: "Source Serif 4", Georgia, "Times New Roman", serif;
+      --sans: "Source Sans 3", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", sans-serif;
+      color-scheme: light;
+    }
+    :root[data-theme="dark"] {
+      --paper: #12171e;
+      --ink: #e4e8ee;
+      --slate: #9aa6b4;
+      --rule: #263040;
+      --link: #8fa8ff;
+      --live: #4fd1a1;
+      --award: #e2b54a;
+      --tile: #1a212b;
+      --tile-ink: #6f7c8d;
+      --todo-bg: #5a4a10;
+      --todo-ink: #ffe9a3;
+      color-scheme: dark;
+    }
+
+    html { -webkit-text-size-adjust: 100%; }
+    body {
+      margin: 0;
+      background: var(--paper);
+      color: var(--ink);
+      font: 400 17px/1.62 var(--serif);
+      text-rendering: optimizeLegibility;
+    }
+    a { color: var(--link); text-decoration: none; }
+    a:hover { text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 0.18em; }
+    :focus-visible { outline: 2px solid var(--link); outline-offset: 3px; border-radius: 2px; }
+    p { margin: 0; }
+
+    .page { max-width: 760px; margin: 0 auto; padding: 76px 24px 64px; }
+
+    /* Intro */
+    .intro {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) 172px;
+      gap: 40px;
+      align-items: start;
+    }
+    .name {
+      margin: 0;
+      font-size: 44px;
+      line-height: 1.08;
+      font-weight: 600;
+      letter-spacing: -0.012em;
+    }
+    .name-ko {
+      font-family: var(--sans);
+      font-size: 0.48em;
+      font-weight: 400;
+      letter-spacing: 0;
+      color: var(--slate);
+      margin-left: 0.4em;
+    }
+    .role { margin-top: 10px; font-family: var(--sans); font-size: 16.5px; color: var(--slate); }
+    .thesis { margin-top: 30px; font-size: 22px; line-height: 1.4; }
+    .bio { margin-top: 18px; }
+    .links {
+      list-style: none;
+      padding: 0;
+      margin: 22px 0 0;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px 20px;
+      font-family: var(--sans);
+      font-size: 16px;
+    }
+    .portrait {
+      position: relative;
+      display: grid;
+      place-items: center;
+      width: 172px;
+      aspect-ratio: 4 / 5;
+      margin: 6px 0 0;
+      border-radius: 10px;
+      overflow: hidden;
+      background: var(--tile);
+    }
+    .portrait::before { content: attr(data-initials); font: 600 40px/1 var(--serif); color: var(--tile-ink); }
+    .portrait img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+
+    /* Sections */
+    section { margin-top: 64px; }
+    h2 { margin: 0 0 18px; font-size: 24px; line-height: 1.25; font-weight: 600; letter-spacing: -0.005em; }
+    .subhead { margin: 48px 0 16px; font-size: 19px; line-height: 1.3; font-weight: 600; }
+
+    /* News */
+    .news { list-style: none; margin: 0; padding: 0; }
+    .news li { display: grid; grid-template-columns: 84px minmax(0, 1fr); gap: 16px; padding: 6px 0; }
+    .news time, .cv-when {
+      padding-top: 2px;
+      font-family: var(--sans);
+      font-size: 15px;
+      color: var(--slate);
+      font-variant-numeric: tabular-nums;
+    }
+    .news p { max-width: 66ch; }
+
+    /* Publications */
+    .pub-key { margin: -6px 0 30px; font-family: var(--sans); font-size: 15px; color: var(--slate); }
+    .live-dot {
+      display: inline-block;
+      width: 8px;
+      height: 8px;
+      margin-right: 8px;
+      border-radius: 50%;
+      background: var(--live);
+      box-shadow: 0 0 0 3px color-mix(in srgb, var(--live) 20%, transparent);
+      vertical-align: 0.06em;
+    }
+    .pub {
+      display: grid;
+      grid-template-columns: 220px minmax(0, 1fr);
+      gap: 26px;
+      margin-bottom: 36px;
+    }
+    .teaser {
+      position: relative;
+      display: grid;
+      place-items: center;
+      aspect-ratio: 2 / 1;
+      margin-top: 4px;
+      border-radius: 8px;
+      overflow: hidden;
+      background: var(--tile);
+    }
+    .teaser::before { content: attr(data-label); font: 600 24px/1 var(--serif); color: var(--tile-ink); letter-spacing: 0.01em; }
+    .teaser img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: contain; }
+    .teaser.loaded { background: #ffffff; }
+    :root[data-theme="dark"] .teaser.loaded img { filter: brightness(0.92); }
+    .pub-title { margin: 0; font-size: 18px; line-height: 1.36; font-weight: 600; }
+    .pub-title a { color: var(--ink); }
+    .authors { margin-top: 6px; font-family: var(--sans); font-size: 15.5px; line-height: 1.45; color: var(--slate); }
+    .authors strong { font-weight: 600; color: var(--ink); }
+    .authors a { color: inherit; }
+    .venue { margin-top: 4px; font-size: 16px; }
+    .award { margin-left: 10px; font-family: var(--sans); font-size: 14.5px; font-weight: 600; color: var(--award); white-space: nowrap; }
+    .impact { margin-top: 6px; font-family: var(--sans); font-size: 15px; font-weight: 600; color: var(--live); }
+    .summary { margin-top: 8px; font-size: 16.5px; }
+    .pub-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 4px 16px;
+      margin-top: 6px;
+      font-family: var(--sans);
+      font-size: 15px;
+    }
+    .compact { list-style: none; margin: 0; padding: 0; }
+    .compact li { margin-bottom: 22px; }
+
+    /* Experience and service */
+    .cv-list { list-style: none; margin: 0; padding: 0; }
+    .cv-list li { display: grid; grid-template-columns: 120px minmax(0, 1fr); gap: 16px; padding: 7px 0; }
+    .cv-what span { color: var(--slate); }
+    .cv-what p { margin-top: 2px; }
+    .plain { list-style: none; margin: 0; padding: 0; }
+
+    footer { margin-top: 72px; font-family: var(--sans); font-size: 14px; color: var(--slate); }
+
+    /* Highlights a placeholder that still needs real content. */
+    .todo { padding: 0 4px; border-radius: 3px; background: var(--todo-bg); color: var(--todo-ink); }
+
+    .theme-toggle {
+      position: absolute;
+      top: 16px;
+      right: 16px;
+      display: grid;
+      place-items: center;
+      width: 38px;
+      height: 38px;
+      padding: 0;
+      border: 1px solid var(--rule);
+      border-radius: 50%;
+      background: var(--paper);
+      color: var(--slate);
+      cursor: pointer;
+    }
+    .theme-toggle:hover { color: var(--ink); }
+    .theme-toggle svg { width: 18px; height: 18px; }
+    .icon-sun { display: none; }
+    :root[data-theme="dark"] .icon-sun { display: block; }
+    :root[data-theme="dark"] .icon-moon { display: none; }
+
+    @media (max-width: 680px) {
+      .page { padding: 60px 20px 48px; }
+      .intro { grid-template-columns: 1fr; gap: 22px; }
+      .portrait { order: -1; width: 112px; margin: 0; }
+      .portrait::before { font-size: 28px; }
+      .name { font-size: 36px; }
+      .thesis { margin-top: 22px; font-size: 20px; }
+      section { margin-top: 52px; }
+      .news li { grid-template-columns: 72px minmax(0, 1fr); gap: 12px; }
+      .pub { grid-template-columns: 1fr; gap: 12px; }
+      .teaser { max-width: 420px; }
+      .teaser:not(.loaded) { display: none; }  /* on phones, skip acronym tiles and show only real figures */
+      .cv-list li { grid-template-columns: 1fr; gap: 0; }
+    }
+    @media print {
+      .theme-toggle { display: none; }
+      .page { padding-top: 0; }
+    }
+  </style>
+</head>
+
+<body>
+  <button type="button" class="theme-toggle" aria-label="Switch theme">
+    <svg class="icon-moon" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M20.6 14.1A8.6 8.6 0 0 1 9.9 3.4a.6.6 0 0 0-.8-.7A9.6 9.6 0 1 0 21.3 14.9a.6.6 0 0 0-.7-.8z"/></svg>
+    <svg class="icon-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4.4" fill="currentColor"/><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" d="M12 2.5v2.2M12 19.3v2.2M2.5 12h2.2M19.3 12h2.2M5.3 5.3l1.6 1.6M17.1 17.1l1.6 1.6M5.3 18.7l1.6-1.6M17.1 6.9l1.6-1.6"/></svg>
+  </button>
+
+  <main class="page">
+    <!-- ===================== INTRO ===================== -->
+    <header class="intro">
+      <div>
+        <h1 class="name">Chung Park<span class="name-ko" lang="ko">박정</span></h1>
+        <p class="role">Lead ML Researcher and Team Lead, SK Telecom</p>
+        <p class="thesis">I build recommender systems that keep learning from the live services they power.</p>
+        <p class="bio">
+          I am a Lead ML Researcher and Team Lead at <a href="https://www.sktelecom.com/">SK Telecom</a>,
+          where my team builds and runs the recommender systems behind SKT’s consumer apps.
+          I received my Ph.D. from the Kim Jaechul Graduate School of AI at <a href="https://gsai.kaist.ac.kr/">KAIST</a> in 2024,
+          advised by <a href="https://sites.google.com/site/jaegulchoo/">Jaegul Choo</a>, and I still work closely with his group.
+        </p>
+        <p class="bio">
+          My research is on self-improving AI systems: recommenders and agents that get better from real-world feedback,
+          which is noisy, partial, and shaped by the policy that collected it.
+          I work on reinforcement learning and preference optimization for LLM recommenders, cross-domain transfer when users do not overlap,
+          and continual updates from bandit feedback. Most of this work is validated in large-scale online A/B tests,
+          and several of the resulting models now serve SKT customers.
+        </p>
+        <ul class="links">
+          <li><a href="mailto:cpark88kr@gmail.com">cpark88kr@gmail.com</a></li>
+          <li><a href="https://scholar.google.com/citations?user=J6FdoUUAAAAJ">Google Scholar</a></li>
+          <li><a href="https://github.com/cpark88">GitHub</a></li>
+          <li><a href="https://www.linkedin.com/in/chung-park-a9a846196">LinkedIn</a></li>
+          <li><a href="assets/cv.pdf">CV</a></li>
+        </ul>
+      </div>
+      <!-- Photo: images/profile.jpg (4:5, at least 600x750). Until it exists, the initials tile is shown. -->
+      <figure class="portrait" data-initials="CP">
+        <img src="images/profile.jpg" alt="Photo of Chung Park">
+      </figure>
+    </header>
+
+    <!-- ===================== NEWS (newest first) ===================== -->
+    <section id="news" aria-labelledby="news-h">
+      <h2 id="news-h">News</h2>
+      <ol class="news">
+        <li><time datetime="2026-09">Sep 2026</time><p><a href="#cure">CURE</a>, on cross-domain recommendation for users who do not overlap across services, was accepted to NeurIPS 2026.</p></li>
+        <li><time datetime="2026-08">Aug 2026</time><p><a href="#duelrec">DuELRec</a> was accepted to the CIKM 2026 Full Research Track.</p></li>
+        <li><time datetime="2026-04">Apr 2026</time><p><a href="#capo">C-APO</a> was presented at ICLR 2026 and covered by the <a href="https://news.sktelecom.com/en/3015">SK Telecom Newsroom</a>.</p></li>
+        <li><time datetime="2026-01">Jan 2026</time><p><a href="#twicerec">TWiCE-Rec</a> was presented as an oral at AAAI 2026 in Singapore.</p></li>
+        <li><time datetime="2024-08">Aug 2024</time><p>Received my Ph.D. from the Kim Jaechul Graduate School of AI at KAIST.</p></li>
+        <li><time datetime="2024-07">Jul 2024</time><p><a href="#syncrec">Pacer and Runner</a> received the Best Paper Honorable Mention at SIGIR 2024.</p></li>
+      </ol>
+    </section>
+
+    <!-- ===================== PUBLICATIONS (newest first) =====================
+         To add a paper: copy one <article class="pub"> block.
+         Teaser: images/teasers/<id>.png (2:1, at least 800px wide). Until it exists, the data-label tile is shown.
+         Add <p class="impact"> only for results that are public in the paper or its repository. -->
+    <section id="publications" aria-labelledby="pubs-h">
+      <h2 id="pubs-h">Publications</h2>
+      <p class="pub-key"><span class="live-dot" aria-hidden="true"></span>marks results measured in a live service. † marks the corresponding author.</p>
+
+      <article class="pub" id="cure">
+        <a class="teaser" href="https://github.com/cpark88/CURE" data-label="CURE" tabindex="-1" aria-hidden="true"><img src="images/teasers/cure.png" alt=""></a>
+        <div>
+          <h3 class="pub-title"><a href="https://github.com/cpark88/CURE">CURE: Coupled User-Grouped Reinforcement Learning for Cross-Domain Recommendation with Non-Overlapping Users</a></h3>
+          <p class="authors">Hyeongjun Yun, Taesan Kim, Dongjoon Hong, Junui Hong, Jihoon Oh, Kijung Park, Mincheol Cho, <span class="todo">K. Song</span>, <a href="https://sites.google.com/site/jaegulchoo/">Jaegul Choo</a>, <strong>Chung Park</strong>†</p>
+          <p class="venue"><em>NeurIPS</em> 2026</p>
+          <p class="impact"><span class="live-dot" aria-hidden="true"></span>Online A/B test: +56% CTR over existing ML methods</p>
+          <p class="summary">Users rarely overlap across services, so cross-domain ground truth barely exists. An agentic pipeline synthesizes cross-domain supervision, and user-grouped RL calibrates it against reliable in-domain rewards.</p>
+          <p class="pub-links"><a href="https://github.com/cpark88/CURE">Code</a></p>
+        </div>
+      </article>
+
+      <article class="pub" id="duelrec">
+        <a class="teaser" href="https://github.com/cpark88/DuELRec" data-label="DuELRec" tabindex="-1" aria-hidden="true"><img src="images/teasers/duelrec.png" alt=""></a>
+        <div>
+          <h3 class="pub-title"><a href="https://github.com/cpark88/DuELRec">A Dual-Expert Strategy Integrating LLMs to Mitigate Negative Transfer in Cross-Domain Sequential Recommendation</a></h3>
+          <p class="authors">Hyeongjun Yun, <span class="todo">K. Song</span>, <a href="https://sites.google.com/site/jaegulchoo/">Jaegul Choo</a>, <strong>Chung Park</strong>†</p>
+          <p class="venue"><em>CIKM</em> 2026, Full Research Track</p>
+          <p class="impact"><span class="live-dot" aria-hidden="true"></span>Deployed in a personal-assistant app: +47.6% relative CTR</p>
+          <p class="summary">An efficient LLM recommender for many service domains: a domain gate mixes single- and cross-domain experts, and token-to-item contrastive learning brings in collaborative signals.</p>
+          <p class="pub-links"><a href="https://github.com/cpark88/DuELRec">Code</a></p>
+        </div>
+      </article>
+
+      <article class="pub" id="capo">
+        <a class="teaser" href="https://openreview.net/forum?id=WYfDoB44xy" data-label="C-APO" tabindex="-1" aria-hidden="true"><img src="images/teasers/capo.png" alt=""></a>
+        <div>
+          <h3 class="pub-title"><a href="https://openreview.net/forum?id=WYfDoB44xy">More Than What Was Chosen: LLM-based Explainable Recommendation Beyond Noisy User Preferences</a></h3>
+          <p class="authors"><strong>Chung Park</strong>, Hyeongjun Yun, Taesan Kim, Junui Hong, Dongjoon Hong, Mira Myong, Jihoon Oh, Mincheol Cho, Kijung Park, Minsung Choi, Jihwan Seok, <a href="https://sites.google.com/site/jaegulchoo/">Jaegul Choo</a></p>
+          <p class="venue"><em>ICLR</em> 2026</p>
+          <p class="impact"><span class="live-dot" aria-hidden="true"></span>Online: 1.65× relative improvement in CTR</p>
+          <p class="summary">Clicks are a noisy proxy for what users want. C-APO pairs revealed preference with coherent preference and reconciles the two with a conflict-aware DPO objective.</p>
+          <p class="pub-links"><a href="https://openreview.net/forum?id=WYfDoB44xy">Paper</a><a href="https://github.com/cpark88/C-APO">Code</a><a href="https://news.sktelecom.com/en/3015">Press</a></p>
+        </div>
+      </article>
+
+      <article class="pub" id="twicerec">
+        <a class="teaser" href="https://ojs.aaai.org/index.php/AAAI/article/view/38590" data-label="TWiCE-Rec" tabindex="-1" aria-hidden="true"><img src="images/teasers/twicerec.png" alt=""></a>
+        <div>
+          <h3 class="pub-title"><a href="https://ojs.aaai.org/index.php/AAAI/article/view/38590">Think Wise, Collaborate Effectively: A Rationale-Aware LLM-Based Recommender with Reinforcement Learning from Collaborative Signals</a></h3>
+          <p class="authors"><strong>Chung Park</strong>, Taesan Kim, Hyeongjun Yun, Dongjoon Hong, Junui Hong, Kijung Park, Mincheol Cho, Minsung Choi, Jihwan Seok, <a href="https://sites.google.com/site/jaegulchoo/">Jaegul Choo</a></p>
+          <p class="venue"><em>AAAI</em> 2026<span class="award">Oral presentation</span></p>
+          <p class="impact"><span class="live-dot" aria-hidden="true"></span>Online A/B test: about +8% CTR over existing models</p>
+          <p class="summary">An LLM recommender that explains its picks, aligned with collaborative-filtering signals through confidence-weighted reinforcement learning.</p>
+          <p class="pub-links"><a href="https://ojs.aaai.org/index.php/AAAI/article/view/38590">Paper</a><a href="https://github.com/cpark88/TWiCE-Rec">Code</a></p>
+        </div>
+      </article>
+
+      <article class="pub" id="syncrec">
+        <a class="teaser" href="https://doi.org/10.1145/3626772.3657710" data-label="SyNCRec" tabindex="-1" aria-hidden="true"><img src="images/teasers/syncrec.png" alt=""></a>
+        <div>
+          <h3 class="pub-title"><a href="https://doi.org/10.1145/3626772.3657710">Pacer and Runner: Cooperative Learning Framework between Single- and Cross-Domain Sequential Recommendation</a></h3>
+          <p class="authors"><strong>Chung Park</strong>, Taesan Kim, Hyungjun Yoon, Junui Hong, Yelim Yu, Mincheol Cho, Minsung Choi, <a href="https://sites.google.com/site/jaegulchoo/">Jaegul Choo</a></p>
+          <p class="venue"><em>SIGIR</em> 2024<span class="award">Best Paper Honorable Mention</span></p>
+          <p class="impact"><span class="live-dot" aria-hidden="true"></span>Deployed in a personal-assistant app: +21.4% CTR over existing models</p>
+          <p class="summary">Single-domain models act as pacers: comparing against them measures the negative transfer in each domain and throttles it while the cross-domain model trains.</p>
+          <p class="pub-links"><a href="https://doi.org/10.1145/3626772.3657710">Paper</a><a href="https://arxiv.org/abs/2407.11245">arXiv</a><a href="https://github.com/cpark88/SyNCRec">Code</a></p>
+        </div>
+      </article>
+
+      <article class="pub" id="fedgeo">
+        <a class="teaser" href="https://doi.org/10.1145/3589132.3625582" data-label="FedGeo" tabindex="-1" aria-hidden="true"><img src="images/teasers/fedgeo.png" alt=""></a>
+        <div>
+          <h3 class="pub-title"><a href="https://doi.org/10.1145/3589132.3625582">FedGeo: Privacy-Preserving User Next Location Prediction with Federated Learning</a></h3>
+          <p class="authors"><strong>Chung Park</strong>, Taekyoon Choi, Taesan Kim, Mincheol Cho, Junui Hong, Minsung Choi, <a href="https://sites.google.com/site/jaegulchoo/">Jaegul Choo</a></p>
+          <p class="venue"><em>SIGSPATIAL</em> 2023</p>
+          <p class="impact"><span class="live-dot" aria-hidden="true"></span>Validated on customers’ phones with a federated-learning agent system</p>
+          <p class="summary">Federated next-location prediction that keeps trajectories on the device and copes with highly heterogeneous user mobility.</p>
+          <p class="pub-links"><a href="https://doi.org/10.1145/3589132.3625582">Paper</a><a href="https://arxiv.org/abs/2312.04594">arXiv</a></p>
+        </div>
+      </article>
+
+      <article class="pub" id="cgrec">
+        <a class="teaser" href="https://doi.org/10.1145/3583780.3614828" data-label="CGRec" tabindex="-1" aria-hidden="true"><img src="images/teasers/cgrec.png" alt=""></a>
+        <div>
+          <h3 class="pub-title"><a href="https://doi.org/10.1145/3583780.3614828">Cracking the Code of Negative Transfer: A Cooperative Game Theoretic Approach for Cross-Domain Sequential Recommendation</a></h3>
+          <p class="authors"><strong>Chung Park</strong>, Taesan Kim, Taekyoon Choi, Junui Hong, Yelim Yu, Mincheol Cho, Kyunam Lee, Sungil Ryu, Hyungjun Yoon, Minsung Choi, <a href="https://sites.google.com/site/jaegulchoo/">Jaegul Choo</a></p>
+          <p class="venue"><em>CIKM</em> 2023</p>
+          <p class="summary">Treats domains as players in a cooperative game and uses Shapley values to down-weight the domains that hurt the others.</p>
+          <p class="pub-links"><a href="https://doi.org/10.1145/3583780.3614828">Paper</a><a href="https://arxiv.org/abs/2311.13188">arXiv</a><a href="https://github.com/cpark88/CGRec">Code</a></p>
+        </div>
+      </article>
+
+      <article class="pub" id="geotokenizer">
+        <a class="teaser" href="https://doi.org/10.1007/978-3-031-43430-3_8" data-label="Geo-Tokenizer" tabindex="-1" aria-hidden="true"><img src="images/teasers/geotokenizer.png" alt=""></a>
+        <div>
+          <h3 class="pub-title"><a href="https://doi.org/10.1007/978-3-031-43430-3_8">Pre-training Contextual Location Embeddings in Personal Trajectories via Efficient Hierarchical Location Representations</a></h3>
+          <p class="authors"><strong>Chung Park</strong>, Taesan Kim, Junui Hong, Minsung Choi, <a href="https://sites.google.com/site/jaegulchoo/">Jaegul Choo</a></p>
+          <p class="venue"><em>ECML PKDD</em> 2023, Applied Data Science Track</p>
+          <p class="summary">Represents each location as multi-scale grid tokens, shrinking the vocabulary enough to pre-train location embeddings at fine resolution and city scale.</p>
+          <p class="pub-links"><a href="https://doi.org/10.1007/978-3-031-43430-3_8">Paper</a><a href="https://arxiv.org/abs/2310.01252">arXiv</a><a href="https://github.com/cpark88/ECML-PKDD2023">Code</a></p>
+        </div>
+      </article>
+
+      <article class="pub" id="pasta">
+        <a class="teaser" href="https://doi.org/10.1007/978-3-031-05933-9_28" data-label="PASTA" tabindex="-1" aria-hidden="true"><img src="images/teasers/pasta.png" alt=""></a>
+        <div>
+          <h3 class="pub-title"><a href="https://doi.org/10.1007/978-3-031-05933-9_28">PASTA: PArallel Spatio-Temporal Attention with Spatial Auto-Correlation Gating for Fine-Grained Crowd Flow Prediction</a></h3>
+          <p class="authors"><strong>Chung Park</strong>, Junui Hong, Cheonbok Park, Taesan Kim, Minsung Choi, <a href="https://sites.google.com/site/jaegulchoo/">Jaegul Choo</a></p>
+          <p class="venue"><em>PAKDD</em> 2022</p>
+          <p class="summary">Spatial auto-correlation gating and temporal attention for forecasting city-wide crowd flows on fine-grained grids.</p>
+          <p class="pub-links"><a href="https://doi.org/10.1007/978-3-031-05933-9_28">Paper</a><a href="https://arxiv.org/abs/2310.02284">arXiv</a></p>
+        </div>
+      </article>
+
+      <h3 class="subhead">Journal articles</h3>
+      <ul class="compact">
+        <li id="patent-value">
+          <p class="pub-title"><a href="https://doi.org/10.1016/j.techfore.2020.120146">Early detection of valuable patents using a deep learning model: Case of semiconductor industry</a></p>
+          <p class="authors"><strong>Chung Park</strong>, So Young Sohn</p>
+          <p class="venue"><em>Technological Forecasting and Social Change</em> 2020</p>
+          <p class="pub-links"><a href="https://doi.org/10.1016/j.techfore.2020.120146">Paper</a></p>
+        </li>
+        <li id="feeder-bus">
+          <p class="pub-title"><a href="https://doi.org/10.1016/j.tra.2019.05.005">Recommendation of feeder bus routes using neural network embedding-based optimization</a></p>
+          <p class="authors"><strong>Chung Park</strong>, Jungpyo Lee, So Young Sohn</p>
+          <p class="venue"><em>Transportation Research Part A: Policy and Practice</em> 2019</p>
+          <p class="pub-links"><a href="https://doi.org/10.1016/j.tra.2019.05.005">Paper</a></p>
+        </li>
+        <li id="bike-sharing">
+          <p class="pub-title"><a href="https://doi.org/10.1016/j.tra.2017.08.019">An optimization approach for the placement of bicycle-sharing stations to reduce short car trips: An application to the city of Seoul</a></p>
+          <p class="authors"><strong>Chung Park</strong>, So Young Sohn</p>
+          <p class="venue"><em>Transportation Research Part A: Policy and Practice</em> 2017</p>
+          <p class="pub-links"><a href="https://doi.org/10.1016/j.tra.2017.08.019">Paper</a></p>
+        </li>
+      </ul>
+
+      <!-- Only public arXiv versions go here. Do not list papers that are under anonymous review. -->
+      <h3 class="subhead">Preprints and workshop papers</h3>
+      <ul class="compact">
+        <li id="abpo">
+          <p class="pub-title"><a href="https://arxiv.org/abs/2605.18899">Don’t Let Bandit Feedback Pull Continual LLM-Recommender Updates Off Target</a></p>
+          <p class="authors">Taesan Kim, Hyeongjun Yun, <a href="https://sites.google.com/site/jaegulchoo/">Jaegul Choo</a>, <strong>Chung Park</strong>†</p>
+          <p class="venue"><em>arXiv</em> 2026</p>
+          <p class="impact"><span class="live-dot" aria-hidden="true"></span>Used in production</p>
+          <p class="pub-links"><a href="https://arxiv.org/abs/2605.18899">arXiv</a></p>
+        </li>
+        <li id="rationale">
+          <p class="pub-title"><a href="https://arxiv.org/abs/2601.02364">Towards Trustworthy LLM-Based Recommendation via Rationale Integration</a></p>
+          <p class="authors"><strong>Chung Park</strong>, Taesan Kim, Hyeongjun Yun, Dongjoon Hong, Junui Hong, Kijung Park, Mincheol Cho, Mira Myong, Jihoon Oh, Minsung Choi</p>
+          <p class="venue"><em>Workshop on Recommender Systems for Sustainable Development</em>, 2025</p>
+          <p class="pub-links"><a href="https://arxiv.org/abs/2601.02364">arXiv</a></p>
+        </li>
+      </ul>
+    </section>
+
+    <!-- ===================== EXPERIENCE ===================== -->
+    <section id="experience" aria-labelledby="exp-h">
+      <h2 id="exp-h">Experience</h2>
+      <ol class="cv-list">
+        <li>
+          <span class="cv-when">2018 – now</span>
+          <div class="cv-what"><strong>SK Telecom</strong><span>, Seoul</span>
+            <p>Lead ML Researcher and Team Lead. Recommender systems across SKT’s consumer apps, LLM fine-tuning and serving, agentic AI.</p>
+          </div>
+        </li>
+      </ol>
+    </section>
+
+    <!-- ===================== EDUCATION ===================== -->
+    <section id="education" aria-labelledby="edu-h">
+      <h2 id="edu-h">Education</h2>
+      <ol class="cv-list">
+        <li>
+          <span class="cv-when">2020 – 2024</span>
+          <div class="cv-what"><strong>KAIST</strong><span>, Kim Jaechul Graduate School of AI</span>
+            <p>Ph.D. in Artificial Intelligence, advised by <a href="https://sites.google.com/site/jaegulchoo/">Jaegul Choo</a>. Dissertation: <em>Empowering Recommender System with Geospatial and Cross-Domain Knowledge</em>.</p>
+          </div>
+        </li>
+        <li>
+          <span class="cv-when">2016 – 2018</span>
+          <div class="cv-what"><strong>Yonsei University</strong><span>, Seoul</span>
+            <p>M.S. in Industrial Engineering</p>
+          </div>
+        </li>
+        <li>
+          <span class="cv-when">2008 – 2014</span>
+          <div class="cv-what"><strong>Yonsei University</strong><span>, Seoul</span>
+            <p>B.A. in Applied Statistics</p>
+          </div>
+        </li>
+      </ol>
+    </section>
+
+    <!-- ===================== SERVICE ===================== -->
+    <section id="service" aria-labelledby="svc-h">
+      <h2 id="svc-h">Academic service</h2>
+      <ul class="plain">
+        <!-- Add other venues you have reviewed for. -->
+        <li>Reviewer, NeurIPS 2026</li>
+      </ul>
+    </section>
+
+    <footer>Last updated November 2026.</footer>
+  </main>
+
+  <script>
+    (function () {
+      var root = document.documentElement;
+      var btn = document.querySelector('.theme-toggle');
+      function stored() { try { return localStorage.getItem('theme'); } catch (e) { return null; } }
+      function label() {
+        btn.setAttribute('aria-label', root.getAttribute('data-theme') === 'dark' ? 'Switch to light theme' : 'Switch to dark theme');
+      }
+      label();
+      btn.addEventListener('click', function () {
+        var next = root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+        root.setAttribute('data-theme', next);
+        try { localStorage.setItem('theme', next); } catch (e) {}
+        label();
+      });
+      var mq = window.matchMedia && matchMedia('(prefers-color-scheme: dark)');
+      if (mq && mq.addEventListener) {
+        mq.addEventListener('change', function (e) {
+          var s = stored();
+          if (s !== 'light' && s !== 'dark') { root.setAttribute('data-theme', e.matches ? 'dark' : 'light'); label(); }
+        });
+      }
+
+      // Images that are not there yet fall back to their tile (initials or paper acronym).
+      document.querySelectorAll('.teaser img, .portrait img').forEach(function (img) {
+        function ok() { img.parentNode.classList.add('loaded'); }
+        function missing() { img.remove(); }
+        if (img.complete) { if (img.naturalWidth) ok(); else missing(); }
+        else { img.addEventListener('load', ok); img.addEventListener('error', missing); }
+      });
+    })();
+  </script>
+</body>
+</html>

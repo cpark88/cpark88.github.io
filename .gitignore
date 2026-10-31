@@ -1,0 +1,9 @@
+# Private: never commit (this repository is public)
+.claude/private-terms.txt
+.claude/settings.local.json
+CLAUDE.local.md
+
+# Generated
+.preview/
+__pycache__/
+.DS_Store
