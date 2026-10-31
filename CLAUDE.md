@@ -8,9 +8,10 @@ Chung Park(박정)의 개인 홈페이지. GitHub Pages가 `main` 브랜치 루�
 
 | 경로 | 내용 |
 |---|---|
-| `index.html` | 페이지 전체. 섹션 순서: Intro → News → Selected publications(한 목록, 유형 태그로 구분) → Experience → Education → Talks → Academic service |
+| `index.html` | 페이지 전체. 섹션 순서: Intro → News → Selected publications(한 목록, 유형 태그로 구분) → Experience → Education → Talks → Academic service → Press |
 | `images/profile.jpg` | 프로필 사진(4:5). 없으면 이니셜 타일이 보인다 |
 | `images/teasers/<id>.png` | 논문 티저. `<id>`는 `<article class="pub" id>`와 같다. 없으면 약어 타일이 보인다 |
+| `images/press/<outlet>.jpg` | Press 항목 사진(16:10, 480×300) |
 | `assets/cv.pdf` | CV 원본. 공개하지 않는다(gitignore, 로컬에만 있다). 페이지의 CV 링크는 이메일 요청으로 연결한다 |
 | `fonts/` | Source Serif 4, Source Sans 3 (직접 호스팅, SIL OFL) |
 | `scripts/check_site.py` | 규칙 검사기. `index.html`을 고치면 훅이 자동 실행한다 |
