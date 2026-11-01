@@ -14,7 +14,7 @@ Every paper goes in the one list under Selected publications, as `<article class
 
 | Status | Type tag | Venue |
 |---|---|---|
-| Accepted at a conference | `Conference` | `<em>VENUE</em> YYYY` |
+| Accepted at a conference | `Conference` | `<em>VENUE</em> YYYY, Main Track` (or the track the user names) |
 | Journal article | `Journal` | `<em>Journal name</em> YYYY, SCIE, IF X.X` (index and IF from the CV or the user) |
 | Workshop paper | `Workshop` | `<em>Workshop name</em>, YYYY` |
 | Public on arXiv, not accepted yet | `Preprint` | `<em>arXiv</em> YYYY` |
@@ -36,7 +36,7 @@ Fill every field from the source in the third column. Open sources in this order
 | `id` | lowercase short name of the method (`duelrec`). It is also the teaser filename. An existing entry keeps its `id` | — |
 | title | exact, with the published capitalization | paper |
 | authors | full list in order, spelled as in the paper; `<strong>Chung Park</strong>`, `†` after the corresponding author | paper (user for `†`) |
-| venue | type tag, then `<em>VENUE</em> YYYY`, plus the track if it is not the main track | user or acceptance notice |
+| venue | type tag, then `<em>VENUE</em> YYYY`. Conferences also show the track: `, Main Track` unless the user names another | user or acceptance notice |
 | award | Oral, Spotlight, Best Paper… only when announced | user |
 | links | Paper, arXiv, Code, Project, Press, in that order, only those that exist | paper page, repo |
 | impact | only a production or online A/B result that the paper or public repo states, with its number and baseline | full text, repo |

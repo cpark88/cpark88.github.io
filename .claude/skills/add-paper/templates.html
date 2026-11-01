@@ -9,7 +9,7 @@
         <div>
           <h3 class="pub-title"><a href="{{title-url}}">{{Exact published title}}</a></h3>
           <p class="authors">{{Author}}, <strong>Chung Park</strong>†, {{Author}}, <a href="https://sites.google.com/site/jaegulchoo/">Jaegul Choo</a></p>
-          <p class="venue"><span class="pub-type">{{Conference|Journal|Workshop|Preprint}}</span><em>{{VENUE}}</em> {{YYYY}}<span class="award">{{Oral presentation}}</span></p>
+          <p class="venue"><span class="pub-type">{{Conference|Journal|Workshop|Preprint}}</span><em>{{VENUE}}</em> {{YYYY}}, {{Main Track}}<span class="award">{{Oral presentation}}</span></p>
           <p class="impact"><span class="live-dot" aria-hidden="true"></span>{{Online A/B test: +X% CTR over <baseline as stated in the paper>}}</p>
           <p class="summary">{{One sentence, at most 30 words: the problem, then the idea.}}</p>
           <p class="pub-links"><a href="{{paper-url}}">Paper</a><a href="https://arxiv.org/abs/{{arxiv-id}}">arXiv</a><a href="https://github.com/cpark88/{{repo}}">Code</a></p>
@@ -18,7 +18,7 @@
 <!--
   optional: † (only if Chung Park is the corresponding author), <span class="award"> (only if announced),
             <p class="impact"> (only if the paper or public repo reports a production result).
-  venue with a track: <em>CIKM</em> 2026, Full Research Track
+  conference track: always shown. Main Track unless the user names another, e.g. <em>ECML PKDD</em> 2023, Applied Data Science Track
   journal venue: <span class="pub-type">Journal</span><em>{{Journal name}}</em> {{YYYY}}, <span class="metric">SCIE, IF {{value from the CV}}</span>, linked by DOI (https://doi.org/...) as "Paper"
   preprint venue: <span class="pub-type">Preprint</span><em>arXiv</em> {{YYYY}}
   workshop venue: <span class="pub-type">Workshop</span><em>{{Workshop name}}</em>, {{YYYY}}
