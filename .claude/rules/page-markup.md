@@ -8,7 +8,7 @@ paths:
 ## 구조
 
 - 한 파일을 유지한다: CSS는 `<head>`의 `<style>`, JS는 페이지 끝 `<script>` 하나.
-- 사용자가 요청하지 않는 한 외부 CDN, 프레임워크, 분석 스크립트를 추가하지 않는다.
+- 사용자가 요청하지 않는 한 외부 CDN, 프레임워크, 분석 스크립트를 추가하지 않는다. 예외는 사용자가 요청한 GoatCounter 스크립트 하나다(`</body>` 바로 앞).
 - 새 항목은 `.claude/skills/add-paper/templates.html`의 마크업을 그대로 복사해 쓴다. 클래스 이름을 새로 만들지 않는다.
 - 논문 `id`는 소문자·숫자·하이픈이고 티저 파일명과 같다: `id="duelrec"` ↔ `images/teasers/duelrec.png`.
 - 티저 `<img>`는 `alt=""`(장식), 프로필 사진은 `alt="Photo of Chung Park"`.
