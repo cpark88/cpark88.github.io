@@ -39,12 +39,11 @@ Fill every field from the source in the third column. Open sources in this order
 | venue | under the teaser: type tag, then `<span class="venue-name"><em>VENUE</em> YYYY</span>`. Conferences also show `<span class="venue-track">Main Track</span>` unless the user names another | user or acceptance notice |
 | award | Oral, Spotlight, Best Paper… only when announced | user |
 | links | Paper, arXiv, Code, Project, Press, in that order, only those that exist | paper page, repo |
-| impact | only a production or online A/B result that the paper or public repo states, with its number and baseline | full text, repo |
 | summary | one sentence, at most 30 words, in your own words: the problem, then the idea | abstract |
 
 The user's word is enough for status, award, venue and dates. Do not search the web to confirm an acceptance.
 
-When an existing entry moves, carry over its impact line. Recheck that line only if the user says the numbers changed.
+Do not add production or A/B-test result lines to entries.
 
 If a field can't be filled, write `<span class="todo">…</span>` there and list it in your report.
 

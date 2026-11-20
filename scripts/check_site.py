@@ -176,9 +176,8 @@ def check_entry(node, label, rep):
     if links is None or not links.find_all("a"):
         rep.error(node.line, f'{label}: <p class="pub-links"> needs at least one link (Paper, arXiv or Code)')
 
-    for impact in node.find_all(cls="impact"):
-        if impact.find(cls="live-dot") is None:
-            rep.error(impact.line, f'{label}: an impact line starts with <span class="live-dot" aria-hidden="true"></span>')
+    if node.find(cls="impact") is not None:
+        rep.error(node.line, f"{label}: entries no longer carry a production-result line; remove <p class=\"impact\">")
 
 
 def check_order(entries, what, rep):

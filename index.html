@@ -69,7 +69,6 @@
       --slate: #5b6675;
       --rule: #e3e7ee;
       --link: #2747c7;
-      --live: #0e7c5a;
       --award: #8a6100;
       --tile: #f1f4f8;
       --tile-ink: #8a95a5;
@@ -85,7 +84,6 @@
       --slate: #9aa6b4;
       --rule: #263040;
       --link: #8fa8ff;
-      --live: #4fd1a1;
       --award: #e2b54a;
       --tile: #1a212b;
       --tile-ink: #6f7c8d;
@@ -207,16 +205,6 @@
 
     /* Publications */
     .pub-key { margin: -6px 0 26px; font-family: var(--sans); font-size: 15px; color: var(--slate); }
-    .live-dot {
-      display: inline-block;
-      width: 8px;
-      height: 8px;
-      margin-right: 8px;
-      border-radius: 50%;
-      background: var(--live);
-      box-shadow: 0 0 0 3px color-mix(in srgb, var(--live) 20%, transparent);
-      vertical-align: 0.06em;
-    }
     .pub {
       display: grid;
       grid-template-columns: 264px minmax(0, 1fr);
@@ -289,16 +277,28 @@
       vertical-align: 0.08em;
     }
     .award { margin-left: 10px; font-family: var(--sans); font-size: 14.5px; font-weight: 600; color: var(--award); white-space: nowrap; }
-    .impact { margin-top: 6px; font-family: var(--sans); font-size: 15px; font-weight: 600; color: var(--live); }
-    .summary { margin-top: 8px; font-size: 16.5px; }
+    .summary {
+      margin-top: 14px;
+      padding-left: 14px;
+      border-left: 2px solid var(--rule);
+      font-size: 16.5px;
+      color: var(--ink);
+    }
     .pub-links {
       display: flex;
       flex-wrap: wrap;
-      gap: 4px 16px;
-      margin-top: 6px;
+      gap: 8px;
+      margin-top: 16px;
       font-family: var(--sans);
-      font-size: 15px;
+      font-size: 14px;
     }
+    .pub-links a {
+      padding: 3px 12px;
+      border: 1px solid var(--rule);
+      border-radius: 999px;
+      line-height: 1.4;
+    }
+    .pub-links a:hover { border-color: var(--link); background: color-mix(in srgb, var(--link) 8%, var(--paper)); text-decoration: none; }
 
     /* Experience and service */
     .cv-list { list-style: none; margin: 0; padding: 0; }
@@ -444,11 +444,10 @@
          One list for every paper. To add a paper: copy one <article class="pub"> block.
          The first tag in the venue line gives the type: Conference, Journal, Workshop or Preprint.
          Only public versions go here. Do not list papers that are under anonymous review.
-         Teaser: images/teasers/<id>.png (2:1, at least 800px wide). Until it exists, the data-label tile is shown.
-         Add <p class="impact"> only for results that are public in the paper or its repository. -->
+         Teaser: images/teasers/<id>.png (2:1, at least 800px wide). Until it exists, the data-label tile is shown. -->
     <section id="publications" aria-labelledby="pubs-h">
       <h2 id="pubs-h">Selected publications</h2>
-      <p class="pub-key"><span class="live-dot" aria-hidden="true"></span>marks results measured in a live service. † marks the corresponding author.</p>
+      <p class="pub-key">† marks the corresponding author.</p>
 
       <article class="pub" id="cure">
         <div class="pub-aside">
@@ -458,7 +457,6 @@
         <div>
           <h3 class="pub-title"><a href="https://github.com/cpark88/CURE">CURE: Coupled User-Grouped Reinforcement Learning for Cross-Domain Recommendation with Non-Overlapping Users</a></h3>
           <p class="authors">Hyeongjun Yun, Taesan Kim, Dongjoon Hong, Junui Hong, Jihoon Oh, Kijung Park, Mincheol Cho, K. Song, <a href="https://sites.google.com/site/jaegulchoo/">Jaegul Choo</a>, <strong>Chung Park</strong>†</p>
-          <p class="impact"><span class="live-dot" aria-hidden="true"></span>Online A/B test: +56% CTR over existing ML methods</p>
           <p class="summary">Users rarely overlap across services, so cross-domain ground truth barely exists. An agentic pipeline synthesizes cross-domain supervision, and user-grouped RL calibrates it against reliable in-domain rewards.</p>
           <p class="pub-links"><a href="https://github.com/cpark88/CURE">Code</a></p>
         </div>
@@ -472,7 +470,6 @@
         <div>
           <h3 class="pub-title"><a href="https://github.com/cpark88/DuELRec">A Dual-Expert Strategy Integrating LLMs to Mitigate Negative Transfer in Cross-Domain Sequential Recommendation</a></h3>
           <p class="authors">Hyeongjun Yun, K. Song, <a href="https://sites.google.com/site/jaegulchoo/">Jaegul Choo</a>, <strong>Chung Park</strong>†</p>
-          <p class="impact"><span class="live-dot" aria-hidden="true"></span>Deployed in a personal-assistant app: +47.6% relative CTR</p>
           <p class="summary">An efficient LLM recommender for many service domains: a domain gate mixes single- and cross-domain experts, and token-to-item contrastive learning brings in collaborative signals.</p>
           <p class="pub-links"><a href="https://github.com/cpark88/DuELRec">Code</a></p>
         </div>
@@ -486,7 +483,6 @@
         <div>
           <h3 class="pub-title"><a href="https://arxiv.org/abs/2605.18899">Don’t Let Bandit Feedback Pull Continual LLM-Recommender Updates Off Target</a></h3>
           <p class="authors">Taesan Kim, Hyeongjun Yun, <a href="https://sites.google.com/site/jaegulchoo/">Jaegul Choo</a>, <strong>Chung Park</strong>†</p>
-          <p class="impact"><span class="live-dot" aria-hidden="true"></span>Used in production</p>
           <p class="pub-links"><a href="https://arxiv.org/abs/2605.18899">arXiv</a></p>
         </div>
       </article>
@@ -499,7 +495,6 @@
         <div>
           <h3 class="pub-title"><a href="https://openreview.net/forum?id=WYfDoB44xy">More Than What Was Chosen: LLM-based Explainable Recommendation Beyond Noisy User Preferences</a></h3>
           <p class="authors"><strong>Chung Park</strong>, Hyeongjun Yun, Taesan Kim, Junui Hong, Dongjoon Hong, Mira Myong, Jihoon Oh, Mincheol Cho, Kijung Park, Minsung Choi, Jihwan Seok, <a href="https://sites.google.com/site/jaegulchoo/">Jaegul Choo</a></p>
-          <p class="impact"><span class="live-dot" aria-hidden="true"></span>Online: 1.65× relative improvement in CTR</p>
           <p class="summary">Clicks are a noisy proxy for what users want. C-APO pairs revealed preference with coherent preference and reconciles the two with a conflict-aware DPO objective.</p>
           <p class="pub-links"><a href="https://openreview.net/forum?id=WYfDoB44xy">Paper</a><a href="https://github.com/cpark88/C-APO">Code</a><a href="https://news.sktelecom.com/en/3015">Press</a></p>
         </div>
@@ -513,7 +508,6 @@
         <div>
           <h3 class="pub-title"><a href="https://ojs.aaai.org/index.php/AAAI/article/view/38590">Think Wise, Collaborate Effectively: A Rationale-Aware LLM-Based Recommender with Reinforcement Learning from Collaborative Signals</a></h3>
           <p class="authors"><strong>Chung Park</strong>, Taesan Kim, Hyeongjun Yun, Dongjoon Hong, Junui Hong, Kijung Park, Mincheol Cho, Minsung Choi, Jihwan Seok, <a href="https://sites.google.com/site/jaegulchoo/">Jaegul Choo</a></p>
-          <p class="impact"><span class="live-dot" aria-hidden="true"></span>Online A/B test: about +8% CTR over existing models</p>
           <p class="summary">An LLM recommender that explains its picks, aligned with collaborative-filtering signals through confidence-weighted reinforcement learning.</p>
           <p class="pub-links"><a href="https://ojs.aaai.org/index.php/AAAI/article/view/38590">Paper</a><a href="https://github.com/cpark88/TWiCE-Rec">Code</a></p>
         </div>
@@ -539,7 +533,6 @@
         <div>
           <h3 class="pub-title"><a href="https://doi.org/10.1145/3626772.3657710">Pacer and Runner: Cooperative Learning Framework between Single- and Cross-Domain Sequential Recommendation</a></h3>
           <p class="authors"><strong>Chung Park</strong>, Taesan Kim, Hyungjun Yoon, Junui Hong, Yelim Yu, Mincheol Cho, Minsung Choi, <a href="https://sites.google.com/site/jaegulchoo/">Jaegul Choo</a></p>
-          <p class="impact"><span class="live-dot" aria-hidden="true"></span>Deployed in a personal-assistant app: +21.4% CTR over existing models</p>
           <p class="summary">Single-domain models act as pacers: comparing against them measures the negative transfer in each domain and throttles it while the cross-domain model trains.</p>
           <p class="pub-links"><a href="https://doi.org/10.1145/3626772.3657710">Paper</a><a href="https://arxiv.org/abs/2407.11245">arXiv</a><a href="https://github.com/cpark88/SyNCRec">Code</a></p>
         </div>
@@ -553,7 +546,6 @@
         <div>
           <h3 class="pub-title"><a href="https://doi.org/10.1145/3589132.3625582">FedGeo: Privacy-Preserving User Next Location Prediction with Federated Learning</a></h3>
           <p class="authors"><strong>Chung Park</strong>, Taekyoon Choi, Taesan Kim, Mincheol Cho, Junui Hong, Minsung Choi, <a href="https://sites.google.com/site/jaegulchoo/">Jaegul Choo</a></p>
-          <p class="impact"><span class="live-dot" aria-hidden="true"></span>Validated on customers’ phones with a federated-learning agent system</p>
           <p class="summary">Federated next-location prediction that keeps trajectories on the device and copes with highly heterogeneous user mobility.</p>
           <p class="pub-links"><a href="https://doi.org/10.1145/3589132.3625582">Paper</a><a href="https://arxiv.org/abs/2312.04594">arXiv</a></p>
         </div>
