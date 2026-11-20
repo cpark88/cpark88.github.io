@@ -36,7 +36,7 @@ Fill every field from the source in the third column. Open sources in this order
 | `id` | lowercase short name of the method (`duelrec`). It is also the teaser filename. An existing entry keeps its `id` | — |
 | title | exact, with the published capitalization | paper |
 | authors | full list in order, spelled as in the paper; `<strong>Chung Park</strong>`, `†` after the corresponding author | paper (user for `†`) |
-| venue | type tag, then `<em>VENUE</em> YYYY`. Conferences also show the track: `, Main Track` unless the user names another | user or acceptance notice |
+| venue | under the teaser: type tag, then `<span class="venue-name"><em>VENUE</em> YYYY</span>`. Conferences also show `<span class="venue-track">Main Track</span>` unless the user names another | user or acceptance notice |
 | award | Oral, Spotlight, Best Paper… only when announced | user |
 | links | Paper, arXiv, Code, Project, Press, in that order, only those that exist | paper page, repo |
 | impact | only a production or online A/B result that the paper or public repo states, with its number and baseline | full text, repo |

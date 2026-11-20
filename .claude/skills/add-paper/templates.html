@@ -5,11 +5,13 @@
 
 <!-- 1. Any paper: inside <section id="publications">, newest first. -->
       <article class="pub" id="{{id}}">
-        <a class="teaser" href="{{title-url}}" data-label="{{Short name}}" tabindex="-1" aria-hidden="true"><img src="images/teasers/{{id}}.png" alt=""></a>
+        <div class="pub-aside">
+          <a class="teaser" href="{{title-url}}" data-label="{{Short name}}" tabindex="-1" aria-hidden="true"><img src="images/teasers/{{id}}.png" alt=""></a>
+          <p class="venue"><span class="pub-type">{{Conference|Journal|Workshop|Preprint}}</span><span class="venue-name"><em>{{VENUE}}</em> {{YYYY}}</span><span class="venue-track">{{Main Track}}</span><span class="award">{{Oral presentation}}</span></p>
+        </div>
         <div>
           <h3 class="pub-title"><a href="{{title-url}}">{{Exact published title}}</a></h3>
           <p class="authors">{{Author}}, <strong>Chung Park</strong>†, {{Author}}, <a href="https://sites.google.com/site/jaegulchoo/">Jaegul Choo</a></p>
-          <p class="venue"><span class="pub-type">{{Conference|Journal|Workshop|Preprint}}</span><em>{{VENUE}}</em> {{YYYY}}, {{Main Track}}<span class="award">{{Oral presentation}}</span></p>
           <p class="impact"><span class="live-dot" aria-hidden="true"></span>{{Online A/B test: +X% CTR over <baseline as stated in the paper>}}</p>
           <p class="summary">{{One sentence, at most 30 words: the problem, then the idea.}}</p>
           <p class="pub-links"><a href="{{paper-url}}">Paper</a><a href="https://arxiv.org/abs/{{arxiv-id}}">arXiv</a><a href="https://github.com/cpark88/{{repo}}">Code</a></p>
@@ -18,10 +20,11 @@
 <!--
   optional: † (only if Chung Park is the corresponding author), <span class="award"> (only if announced),
             <p class="impact"> (only if the paper or public repo reports a production result).
-  conference track: always shown. Main Track unless the user names another, e.g. <em>ECML PKDD</em> 2023, Applied Data Science Track
-  journal venue: <span class="pub-type">Journal</span><em>{{Journal name}}</em> {{YYYY}}, <span class="metric">SCIE, IF {{value from the CV}}</span>, linked by DOI (https://doi.org/...) as "Paper"
-  preprint venue: <span class="pub-type">Preprint</span><em>arXiv</em> {{YYYY}}
-  workshop venue: <span class="pub-type">Workshop</span><em>{{Workshop name}}</em>, {{YYYY}}
+  The venue sits under the teaser: type tag, then the boxed name and year, then the track or metric line.
+  conference track: always shown. Main Track unless the user names another, e.g. <span class="venue-track">Applied Data Science Track</span>
+  journal venue: <span class="pub-type">Journal</span><span class="venue-name"><em>{{Journal name}}</em> {{YYYY}}</span><span class="venue-track">SCIE, IF {{value from the CV}}</span>, linked by DOI (https://doi.org/...) as "Paper"
+  preprint venue: <span class="pub-type">Preprint</span><span class="venue-name"><em>arXiv</em> {{YYYY}}</span>
+  workshop venue: <span class="pub-type">Workshop</span><span class="venue-name"><em>{{Workshop name}}</em> {{YYYY}}</span>
   links, in this order and only those that exist: Paper, arXiv, Code, Project, Press.
   title-url: the paper page; the Code repo if there is no paper page yet.
 -->
